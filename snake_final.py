@@ -14,7 +14,7 @@ posponer = 0.1
 #Estaclecemos la funcion para que me empiece con un sonido cuando tire la funcion
 def comienzo_sound():
     mixer.init()
-    mixer.music.load("intro.mp3")
+    mixer.music.load("./music/intro.wav")
     mixer.music.play()
 
 
@@ -33,7 +33,7 @@ todos_obstaculos = []
 ventana = turtle.Screen()
 ventana.title("Juego Snake Proyecto UdeA")
 ventana.bgcolor("black")
-ventana.bgpic("fondo.png")
+ventana.bgpic("./image/fondo.png")
 ventana.setup(width = 1300, height = 1100)
 ventana.tracer(0)
 
@@ -143,17 +143,17 @@ align = "center", font =("Courier", 18, "normal"))
 #Funciones
 def morder_sound():
     mixer.init()
-    mixer.music.load("morder1.mp3")
+    mixer.music.load("./music/morder1.wav")
     mixer.music.play()
 
 def perder_sound():
     mixer.init()
-    mixer.music.load("game_overs.mp3")
+    mixer.music.load("./music/game_overs.wav")
     mixer.music.play()
 
 def ganar_sound():
     mixer.init()
-    mixer.music.load("ganar.mp3")
+    mixer.music.load("./music/ganar.wav")
     mixer.music.play()
 
 def limpiar_obstaculos():
@@ -170,7 +170,7 @@ def ganaste():
     GA.penup()
     GA.hideturtle()
     GA.goto(-250,230)
-    GA.write("¡GANASTE!", font =("Courier", 50, "normal"))
+    GA.write("¡¡¡GANASTE!!!", font =("Courier", 50, "normal"))
     GA.clear()
     time.sleep(1)
 
@@ -196,7 +196,7 @@ def game_over():
         segmento.goto(1000,1000)
     #Limpiar lista de Segmentos
     segmentos.clear()
-    ventana.bgpic("game_overi.png")
+    ventana.bgpic("./image/game_overi.png")
     GO = turtle.Turtle()
     GO.speed(0)
     GO.color("white")
@@ -206,7 +206,7 @@ def game_over():
     GO.write("", font =("Courier", 50, "normal"))
     GO.clear()
     time.sleep(2)
-    ventana.bgpic("fondo.png")
+    ventana.bgpic("./image/fondo.png")
     cabeza.goto(0,0)
     cabeza.direction = "stop"
     global puntaje
@@ -309,7 +309,7 @@ while(jugando):
             #el ciclo
             if(ultimo_obstaculo_revisado == len(todos_obstaculos)):
                 is_good = False
-        #aca finalmente es cuando se genera la comida en la posicion x,
+        #aca finalmente es cuando se genera la comida en la posicion x,y
         comida.goto(x,y)
 
         #Estos son los pedazos cuerpo que se agregan cuando la serpiente come
@@ -402,7 +402,7 @@ while(jugando):
 
 
         #Limpiar lista de Segmentos
-        #para que comience pequena la serpiente
+        #para que comience pequeña la serpiente
         segmentos.clear()
 
 
@@ -1149,7 +1149,7 @@ while(jugando):
         ventana.title("Juego Snake Proyecto UdeA")
         ventana.bgcolor("black")
         #Activar el fondo
-        ventana.bgpic("you_win.gif")
+        ventana.bgpic("./image/you_win.gif")
         ventana.setup(width = 1300, height = 1100)
         ventana.tracer(0)
 
